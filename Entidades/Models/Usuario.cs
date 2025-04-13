@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Practica.Models;
+namespace Entidades.Models;
 
-public partial class Usuario
+public class Usuario
 {
-    public Usuario(string nombre, string codigoUsuario, string contrasenia)
-    {
-        Nombre = nombre;
-        CodigoUsuario = codigoUsuario;
-        Contrasenia = contrasenia;
-    }
 
     public int IdUsuario { get; set; }
 

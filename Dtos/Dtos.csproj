@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Crypthography" Version="1.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.8.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.8.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Practica\Practica.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Entidades\Entidades.csproj" />
+	</ItemGroup>
 
 </Project>

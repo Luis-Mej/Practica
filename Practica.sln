@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica", "Practica\Practica.csproj", "{D618CDCF-49DA-46BF-A37B-5202B6480FDE}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dtos", "Dtos\Dtos.csproj", "{A375C181-5057-4A55-B97B-3D9CF7179684}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryptar", "Encryptar\Encryptar.csproj", "{4C9C008A-6CF1-4F5F-B4B1-559B12AC5CA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWT", "JWT\JWT.csproj", "{69960951-A388-4269-A798-5EFA7514B8E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{2863C570-E9A2-4803-8B44-1AD3A4C82BB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{4C9C008A-6CF1-4F5F-B4B1-559B12AC5CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C9C008A-6CF1-4F5F-B4B1-559B12AC5CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C9C008A-6CF1-4F5F-B4B1-559B12AC5CA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69960951-A388-4269-A798-5EFA7514B8E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69960951-A388-4269-A798-5EFA7514B8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69960951-A388-4269-A798-5EFA7514B8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69960951-A388-4269-A798-5EFA7514B8E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2863C570-E9A2-4803-8B44-1AD3A4C82BB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2863C570-E9A2-4803-8B44-1AD3A4C82BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2863C570-E9A2-4803-8B44-1AD3A4C82BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2863C570-E9A2-4803-8B44-1AD3A4C82BB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

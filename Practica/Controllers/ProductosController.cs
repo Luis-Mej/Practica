@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Practica.Context;
-using Practica.Models;
+using Dtos.ProductosDTOS;
+using Negocio.Servicios;
 
 namespace Practica.Controllers
 {
@@ -16,95 +10,46 @@ namespace Practica.Controllers
     [Authorize]
     public class ProductosController : ControllerBase
     {
-        private readonly PracticaContext _context;
+        private readonly ProductosServicios _productoServicio;
 
-        public ProductosController(PracticaContext context)
+        public ProductosController(ProductosServicios productoServicio)
         {
-            _context = context;
+            _productoServicio = productoServicio;
         }
 
-        // GET: api/Productos
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Producto>>> GetProductos()
+        public async Task<IActionResult> GetProductos()
         {
-            return await _context.Productos.ToListAsync();
+            var resultado = await _productoServicio.GetProductosDTO();
+            return StatusCode(resultado.StatusCode, resultado);
         }
 
-        // GET: api/Productos/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Producto>> GetProducto(int id)
+        public async Task<IActionResult> GetProducto(int id)
         {
-            var producto = await _context.Productos.FindAsync(id);
-
-            if (producto == null)
-            {
-                return NotFound();
-            }
-
-            return producto;
+            var resultado = await _productoServicio.GetProductoPorId(id);
+            return StatusCode(resultado.StatusCode, resultado);
         }
 
-        // PUT: api/Productos/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutProducto(int id, Producto producto)
-        {
-            if (id != producto.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(producto).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProductoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Productos
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Producto>> PostProducto(Producto producto)
+        public async Task<IActionResult> PostProducto([FromBody] ProductoDTO productoDto)
         {
-            _context.Productos.Add(producto);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetProducto", new { id = producto.Id }, producto);
+            var resultado = await _productoServicio.PostProductosDTO(productoDto);
+            return StatusCode(resultado.StatusCode, resultado);
         }
 
-        // DELETE: api/Productos/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutProducto(int id, [FromBody] ProductoDTO productoDto)
+        {
+            var resultado = await _productoServicio.PutProductosDTO(id, productoDto);
+            return StatusCode(resultado.StatusCode, resultado);
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProducto(int id)
         {
-            var producto = await _context.Productos.FindAsync(id);
-            if (producto == null)
-            {
-                return NotFound();
-            }
-
-            _context.Productos.Remove(producto);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool ProductoExists(int id)
-        {
-            return _context.Productos.Any(e => e.Id == id);
+            var resultado = await _productoServicio.DeleteProductosDTO(id);
+            return StatusCode(resultado.StatusCode, resultado);
         }
     }
 }

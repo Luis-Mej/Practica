@@ -26,11 +26,10 @@ namespace Encryptar.Encriptador
             }
         }
 
-        public static string Desencriptar(string textoEncriptado)
+        public static bool CompararHash(string textoPlano, string hash)
         {
-            byte[] bytes = Convert.FromBase64String(textoEncriptado);
-            string desencriptado = Encoding.UTF8.GetString(bytes);
-            return desencriptado;
+            string hashTextoPlano = Encriptar(textoPlano);
+            return hashTextoPlano == hash;
         }
     }
 }
