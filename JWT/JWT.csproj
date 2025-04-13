@@ -7,15 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Crypthography" Version="1.0.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.8.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.8.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Dtos\Dtos.csproj" />
-    <ProjectReference Include="..\Encryptar\Encryptar.csproj" />
-    <ProjectReference Include="..\JWT\JWT.csproj" />
     <ProjectReference Include="..\Practica\Practica.csproj" />
   </ItemGroup>
 

@@ -5,12 +5,6 @@ namespace Practica.Models;
 
 public partial class Producto
 {
-    public Producto(string nombre, decimal precio, int stock)
-    {
-        Nombre = nombre;
-        Precio = precio;
-        Stock = stock;
-    }
 
     public int Id { get; set; }
 
@@ -20,5 +14,5 @@ public partial class Producto
 
     public int Stock { get; set; }
 
-    public string? Estado { get; set; }
+    public string? Estado { get; set; } =string.Empty;
 }

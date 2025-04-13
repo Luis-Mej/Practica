@@ -17,9 +17,9 @@ namespace Dtos.UsuariosDTOS
             Contrasenia = contrasenia;
         }
 
-        public string Nombre { get; set; }
-        public string CodigoUsuario { get; set; }
-        public string Contrasenia { get; set; }
+        public string Nombre { get; set; } = string.Empty;
+        public string CodigoUsuario { get; set; } = string.Empty;
+        public string Contrasenia { get; set; } = string.Empty;
 
     }
 }
