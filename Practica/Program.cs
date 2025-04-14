@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Practica.Context;
 using System.Text;
 using System.Text.Json.Serialization;
 using Entidades.Context;
 using JWT.JwtServicios;
 using Negocio.Servicios;
 using JWT.JWToken;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
